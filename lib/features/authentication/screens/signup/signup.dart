@@ -1,14 +1,10 @@
-import 'package:ecommerce_project/app.dart';
 import 'package:ecommerce_project/common/widgets/login_signup/form_divider.dart';
 import 'package:ecommerce_project/common/widgets/login_signup/social_button.dart';
 import 'package:ecommerce_project/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:ecommerce_project/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/size.dart';
 import '../../../../utils/constants/text_strings.dart';
 

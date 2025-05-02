@@ -1,12 +1,11 @@
-import 'package:ecommerce_project/utils/constants/enums.dart';
 import 'package:ecommerce_project/utils/constants/image_strings.dart';
 import 'package:ecommerce_project/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../common/widgets/success_screen/success_screen.dart';
+import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/size.dart';
 import '../../../../utils/constants/text_strings.dart';
 import '../login/login.dart';
@@ -62,6 +61,11 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: TColors.primary,          // 🔵 Background
+                    foregroundColor: TColors.white,         // ⚪ Text/Icon
+                    side: BorderSide(color: TColors.primary),   // 🔴 Border color
+                  ),
                   onPressed:
                       () => Get.to(
                         () => SuccessScreen(
@@ -79,7 +83,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text(TTexts.resendEmail),
+                  child: const Text(TTexts.resendEmail, style: TextStyle(color: TColors.white),),
                 ),
               ),
             ],

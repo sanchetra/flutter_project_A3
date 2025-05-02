@@ -1,9 +1,7 @@
 import 'package:ecommerce_project/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecommerce_project/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../../utils/constants/colors.dart';
@@ -12,9 +10,7 @@ import '../../../../../utils/constants/text_strings.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
 class TSignupForm extends StatelessWidget {
-  const TSignupForm({
-    super.key,
-  });
+  const TSignupForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -89,10 +85,20 @@ class TSignupForm extends StatelessWidget {
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
           // sign up button
-          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => VerifyEmailScreen()), child: const Text(TTexts.createAccount)),)
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () => Get.to(() => VerifyEmailScreen()),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: TColors.primary, // 🔵 Background
+                foregroundColor: TColors.white, // ⚪ Text/Icon
+                side: BorderSide(color: TColors.primary), // 🔴 Border color
+              ),
+              child: const Text(TTexts.createAccount),
+            ),
+          ),
         ],
       ),
     );
   }
 }
-

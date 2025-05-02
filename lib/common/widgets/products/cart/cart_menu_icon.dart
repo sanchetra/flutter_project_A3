@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:ecommerce_project/features/shop/screens/cart/cart.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../utils/constants/colors.dart';
@@ -7,11 +9,11 @@ import '../../../../utils/constants/colors.dart';
 class TCardCounterIcon extends StatelessWidget {
   const TCardCounterIcon({
     super.key,
-    required this.iconColor,
+    this.iconColor,
     required this.onPressed,
   });
 
-  final Color iconColor;
+  final Color? iconColor;
   final VoidCallback onPressed;
 
   @override
@@ -19,7 +21,7 @@ class TCardCounterIcon extends StatelessWidget {
     return Stack(
       children: [
         IconButton(
-          onPressed: onPressed,
+          onPressed: () => Get.to(() => CartScreen()),
           icon: Icon(Iconsax.shopping_bag_copy, color: iconColor),
         ),
         Positioned(

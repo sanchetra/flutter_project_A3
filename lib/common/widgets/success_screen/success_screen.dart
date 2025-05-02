@@ -1,6 +1,7 @@
 import 'package:ecommerce_project/common/styles/spacing_styles.dart';
 
 import 'package:flutter/material.dart';
+import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/size.dart';
 import '../../../utils/constants/text_strings.dart';
 import '../../../utils/helpers/helper_functions.dart';
@@ -44,6 +45,11 @@ class SuccessScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: onPressed,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: TColors.primary,          // 🔵 Background
+                  foregroundColor: TColors.white,         // ⚪ Text/Icon
+                  side: BorderSide(color: TColors.primary),   // 🔴 Border color
+                ),
                 child: const Text(TTexts.tContinue),
               ),
             ),

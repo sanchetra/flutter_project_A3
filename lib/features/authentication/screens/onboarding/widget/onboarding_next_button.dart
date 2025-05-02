@@ -1,5 +1,4 @@
 import 'package:ecommerce_project/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
@@ -23,8 +22,8 @@ class onBoardingNextButton extends StatelessWidget {
       bottom: TDeviceUtils.getBottomNavigationBarHeight(),
       child: ElevatedButton(
         onPressed: () => OnBoardingController.instance.nextPage(),
-        style: ElevatedButton.styleFrom(shape: CircleBorder(), backgroundColor: dark ? TColors.primary : Colors.black),
-        child: Icon(Iconsax.arrow_right_1_copy),
+        style: ElevatedButton.styleFrom(shape: CircleBorder(), backgroundColor: dark ? TColors.primary : Colors.black, side: BorderSide(color: TColors.primary),),
+        child: Icon(Iconsax.arrow_right_1_copy,),
       ),
     );
   }

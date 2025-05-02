@@ -4,17 +4,10 @@ import 'package:ecommerce_project/features/authentication/screens/onboarding/wid
 import 'package:ecommerce_project/features/authentication/screens/onboarding/widget/onboarding_page.dart';
 import 'package:ecommerce_project/features/authentication/screens/onboarding/widget/onboarding_skip.dart';
 import 'package:ecommerce_project/utils/constants/image_strings.dart';
-import 'package:ecommerce_project/utils/device/device_utility.dart';
-import 'package:ecommerce_project/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/size.dart';
 import '../../../../utils/constants/text_strings.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
