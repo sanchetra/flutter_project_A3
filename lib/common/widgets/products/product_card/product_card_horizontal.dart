@@ -102,22 +102,11 @@ class TProductHorizontal extends StatelessWidget {
                       Flexible(child: TProductPriceText(price: '299.99')),
 
                       // add to cart
-                      Container(
-                        decoration: BoxDecoration(
-                          color: TColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(TSizes.productImageRadius),
-                            bottomRight: Radius.circular(
-                              TSizes.productImageRadius,
-                            ),
-                          ),
-                        ),
-                        child: SizedBox(
-                          width: TSizes.iconLg * 1.2,
-                          height: TSizes.iconLg * 1.2,
-                          child: Center(
-                            child: Icon(Iconsax.add, color: TColors.white),
-                          ),
+                      SizedBox(
+                        width: TSizes.iconLg * 1.2,
+                        height: TSizes.iconLg * 1.2,
+                        child: Center(
+                          child: Icon(Iconsax.add, color: dark ? TColors.light : TColors.dark,),
                         ),
                       ),
                     ],
