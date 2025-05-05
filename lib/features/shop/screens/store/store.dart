@@ -4,12 +4,16 @@ import 'package:ecommerce_project/common/widgets/custom_shapes/containers/search
 import 'package:ecommerce_project/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_project/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:ecommerce_project/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_project/features/shop/screens/brand/all_brands.dart';
 import 'package:ecommerce_project/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:ecommerce_project/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../../common/widgets/brands/t_brand_card.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/size.dart';
+import '../all_products/all_products.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -57,7 +61,7 @@ class StoreScreen extends StatelessWidget {
                       // feature brand
                       TSectionHeading(
                         title: 'Featured Brands',
-                        onPressed: () {}, buttonTitle: 'View all',
+                        onPressed: () => (Get.to(() => AllBrandsScreen())), buttonTitle: 'View all',
                       ),
                       SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
