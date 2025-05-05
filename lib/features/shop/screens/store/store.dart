@@ -27,7 +27,7 @@ class StoreScreen extends StatelessWidget {
           actions: [TCardCounterIcon(onPressed: () {})],
         ),
         body: NestedScrollView(
-          headerSliverBuilder: (_, innerBoxuIsScrolled) {
+          headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
               SliverAppBar(
                 automaticallyImplyLeading: false,
