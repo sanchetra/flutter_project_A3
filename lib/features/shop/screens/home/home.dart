@@ -1,7 +1,10 @@
+import 'package:ecommerce_project/features/shop/screens/all_products/all_products.dart';
 import 'package:ecommerce_project/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ecommerce_project/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ecommerce_project/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
@@ -72,11 +75,11 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: TSizes.spaceBtwSections,),
 
                   // heading
-                  TSectionHeading(title: 'Popular Product', onPressed: () {}, buttonTitle: 'View all',),
+                  TSectionHeading(title: 'Popular Product', onPressed: () => Get.to(() => AllProducts()), buttonTitle: 'View all',),
                   SizedBox(height: TSizes.spaceBtwSections,),
 
                   // popular product
-                  TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCardVertical(),),
+                  TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCardVertical()),
                 ],
               ),
             ),
