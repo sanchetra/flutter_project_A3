@@ -5,11 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../common/widgets/list_tiles/settings_menu_tile.dart';
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/size.dart';
+import '../../../authentication/screens/login/login.dart';
 import '../../../shop/screens/order/order.dart';
 import '../address/address.dart';
 import '../profile/profile.dart';
@@ -93,51 +95,25 @@ class SettingsScreen extends StatelessWidget {
                     title: 'Account Privacy',
                     subTitle: 'Manage data usage and connected accounts',
                   ),
+                  SizedBox(height: TSizes.spaceBtwSections),
 
-                  /// -- App Settings
-                  SizedBox(height: TSizes.spaceBtwSections),
-                  TSectionHeading(
-                    title: 'App Settings',
-                    showActionButton: false, buttonTitle: 'View all',
-                  ),
-                  SizedBox(height: TSizes.spaceBtwItems),
-                  TSettingsMenuTile(
-                    icon: Iconsax.document_upload,
-                    title: 'Load Data',
-                    subTitle: 'Upload Data to your Cloud Firebase',
-                  ),
-                  TSettingsMenuTile(
-                    icon: Iconsax.location,
-                    title: 'Geolocation',
-                    subTitle: 'Set recommendation based on location',
-                    trailing: Switch(value: true, onChanged: (value) {}),
-                  ), // TSettingsMenuTile
-                  TSettingsMenuTile(
-                    icon: Iconsax.security_user,
-                    title: 'Safe Mode',
-                    subTitle: 'Search result is safe for all ages',
-                    trailing: Switch(value: false, onChanged: (value) {}),
-                  ), // TSettingsMenuTile
-                  TSettingsMenuTile(
-                    icon: Iconsax.image,
-                    title: 'HD Image Quality',
-                    subTitle: 'Set image quality to be seen',
-                    trailing: Switch(value: false, onChanged: (value) {}),
-                  ), // TSettingsMenuTile
-                  // logout button
-                  SizedBox(height: TSizes.spaceBtwSections),
+                  /// -- Log out
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        final prefs = await SharedPreferences.getInstance();
+                        await prefs.remove('token'); // 🔑 Clear the token
+                        Get.offAll(() => const LoginScreen()); //  Clear routes and redirect
+                      },
                       style: OutlinedButton.styleFrom(
-                        foregroundColor: TColors.white, // 🔴 Text and icon color
+                        foregroundColor: TColors.white, //  Text and icon color
                         side: BorderSide(
-                          color: TColors.primary,
+                          color: TColors.error,
                           width: 2,
-                        ), // 🔴 Border color and width
+                        ), //  Border color and width
                       ),
-                      child: Text('Logout'),
+                      child: Text('Logout', style: TextStyle(color: TColors.error),),
                     ),
                   ),
                   SizedBox(height: TSizes.spaceBtwSections),
